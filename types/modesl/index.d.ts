@@ -9,51 +9,51 @@ import EventEmitter = NodeJS.EventEmitter;
 export class Connection extends EventEmitter {
     constructor(...args: any[]);
 
-    api(command: any, args: string[], cb?: () => void): void;
+    api(command: any, args: string[], cb?: (result?: any) => void): void;
 
     auth(cb: () => void): void;
 
-    bgapi(command: any, args: string[], jobid?: any, cb?: () => void): void;
+    bgapi(command: any, args: string[], jobid?: any, cb?: (result?: any) => void): void;
 
     connected(): any;
 
     disconnect(): void;
 
-    events(type: 'json' | 'plain' | 'xml', events: string, cb?: () => void): void;
+    events(type: 'json' | 'plain' | 'xml', events: string, cb?: (result?: any) => void): void;
 
-    execute(app: any, arg?: string, uuid?: string, cb?: () => void): any;
+    execute(app: any, arg?: string, uuid?: string, cb?: (result?: any) => void): any;
 
-    executeAsync(app: any, arg?: string, uuid?: string, cb?: () => void): any;
+    executeAsync(app: any, arg?: string, uuid?: string, cb?: (result?: any) => void): any;
 
-    filter(header: any, value: any, cb?: () => void): void;
+    filter(header: any, value: any, cb?: (result?: any) => void): void;
 
-    filterDelete(header: any, value: any, cb?: () => void): void;
+    filterDelete(header: any, value: any, cb?: (result?: any) => void): void;
 
     getInfo(): any;
 
-    message(options: any, cb?: () => void): void;
+    message(options: any, cb?: (result?: any) => void): void;
 
-    originate(options: any, cb?: () => void): void;
+    originate(options: any, cb?: (result?: any) => void): void;
 
-    recvEvent(cb?: () => void): void;
+    recvEvent(cb?: (result?: any) => void): void;
 
-    recvEventTimed(ms: any, cb?: () => void): void;
+    recvEventTimed(ms: any, cb?: (result?: any) => void): void;
 
     send(command: any, args: any): void;
 
-    sendEvent(event: any, cb?: () => void): void;
+    sendEvent(event: any, cb?: (result?: any) => void): void;
 
-    sendRecv(command: any, args: any, cb?: () => void): void;
+    sendRecv(command: any, args: any, cb?: (result?: any) => void): void;
 
     setAsyncExecute(value: any): void;
 
     setEventLock(value: any): void;
 
-    show(item: any, format: any, cb?: () => void): void;
+    show(item: any, format: any, cb?: (result?: any) => void): void;
 
     socketDescriptor(): any;
 
-    subscribe(events: any, cb?: () => void): void;
+    subscribe(events: any, cb?: (result?: any) => void): void;
 }
 
 export interface Header {
